@@ -15,7 +15,7 @@
     "@react-navigation/stack": "^5.12.8",
     "expo": "~39.0.2",
     "expo-av": "^8.6.0",
-    "expo-camera": "^9.0.0",
+    "expo-camera": "~9.0.0",
     "expo-image-picker": "^9.1.1",
     "expo-image-picker-multiple": "^1.2.4",
     "expo-screen-orientation": "^2.0.0",

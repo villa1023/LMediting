@@ -34,7 +34,7 @@ function HomeScreen({ navigation }) {
     {
       name: "Welcome to Your Apt",
       url:
-        "https://storage.googleapis.com/leasemagnets-cloud-storage/sample-intro.mp4",
+        "https://storage.googleapis.com/leasemagnets-cloud-storage/girl-talking.mp4",
       id: "c1r342c2",
     },
     {
@@ -88,83 +88,83 @@ function HomeScreen({ navigation }) {
     }
   };
   return (
-    /*<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Welcome to Oscar and Khaled's Video Editing App</Text>
-      <Button 
-      title="Record or Take a Picture"
-      onPress={()=> navigation.navigate('Details')}
+      <Button
+        title="Record or Take a Picture"
+        onPress={() => navigation.navigate("Details")}
       />
       <Button
-      title="Edit Your Videos"
-      onPress={()=> navigation.navigate('Edit')}
+        title="Edit Your Videos"
+        onPress={() => navigation.navigate("Edit")}
       />
-    </View>*/
-    <SafeAreaView>
-      <ScrollView style={styles.WebViewContainer}>
-        <TextInput
-          value={search}
-          style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-          onChangeText={(text) => {
-            setSearch(text);
-          }}
-          placeholder="Search for floor plan or amenity"
-        />
-        <Text style={{ color: "#fff" }}>Hi Everyone 212</Text>
+    </View>
+    // <SafeAreaView>
+    //   <ScrollView style={styles.WebViewContainer}>
+    //     <TextInput
+    //       value={search}
+    //       style={{ height: 40, borderColor: "black", borderWidth: 1 }}
+    //       onChangeText={(text) => {
+    //         setSearch(text);
+    //       }}
+    //       placeholder="Search for floor plan or amenity"
+    //     />
+    //     {/* <Text style={{ color: "#fff" }}>Hi Everyone 212</Text> */}
 
-        {videos
-          .filter((video) => {
-            return video.name.toLowerCase().includes(search.toLowerCase());
-          })
-          .map((video, idx) => {
-            return (
-              <>
-                <View style={styles.buttonTitle}>
-                  <Button
-                    title={video.name}
-                    onPress={() => {
-                      setVideo(video);
-                    }}
-                  />
-                </View>
-              </>
-            );
-          })}
+    //     {videos
+    //       .filter((video) => {
+    //         return video.name.toLowerCase().includes(search.toLowerCase());
+    //       })
+    //       .map((video, idx) => {
+    //         return (
+    //           <>
+    //             <View style={styles.buttonTitle}>
+    //               <Button
+    //                 title={video.name}
+    //                 onPress={() => {
+    //                   setVideo(video);
+    //                 }}
+    //               />
+    //             </View>
+    //           </>
+    //         );
+    //       })}
 
-        <TextInput
-          value={video.name}
-          style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-          onChangeText={(title) => {
-            setVideo({ ...video, name: title });
-          }}
-          defaultValue="New Video"
-        />
-        <VideoPlayer
-          videoProps={{
-            shouldPlay: false,
-            resizeMode: Video.RESIZE_MODE_CONTAIN,
-            source: {
-              uri: `${video.url}`,
-            },
-          }}
-          // switchToLandscape={async () =>
-          //   await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT)
-          // }
-          // switchToPortrait={async () =>
-          //   await ScreenOrientation.unlockAsync()
-          // }
-          inFullscreen={false}
-          height={300}
-        />
+    //     <TextInput
+    //       value={video.name}
+    //       style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+    //       onChangeText={(title) => {
+    //         setVideo({ ...video, name: title });
+    //       }}
+    //       defaultValue="New Video"
+    //     />
+    //     <VideoPlayer
+    //       videoProps={{
+    //         shouldPlay: false,
+    //         resizeMode: Video.RESIZE_MODE_CONTAIN,
+    //         source: {
+    //           uri: `${video.url}`,
+    //         },
+    //       }}
+    //       // switchToLandscape={async () =>
+    //       //   await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT)
+    //       // }
+    //       // switchToPortrait={async () =>
+    //       //   await ScreenOrientation.unlockAsync()
+    //       // }
+    //       inFullscreen={false}
+    //       height={300}
+    //     />
 
-        <Button title="Pick an video from camera roll" onPress={pickVideo} />
-        <Button
-          title="Create new video"
-          onPress={() => navigation.navigate("Details")}
-        />
+    //     <Button title="Pick an video from camera roll" onPress={pickVideo} />
+    //     <Button
+    //       title="Create new video"
+    //       onPress={() => navigation.navigate("Details")}
+    //     />
 
-        <StatusBar style="auto" />
-      </ScrollView>
-    </SafeAreaView>
+    //     <StatusBar style="auto" />
+    //   </ScrollView>
+    // </SafeAreaView>
   );
 }
 
@@ -250,7 +250,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "black",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -260,6 +260,6 @@ const styles = StyleSheet.create({
   buttonTitle: {
     width: 100,
     height: 100,
-    backgroundColor: "#000",
+    backgroundColor: "#9999",
   },
 });
